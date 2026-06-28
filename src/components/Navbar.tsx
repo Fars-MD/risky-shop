@@ -6,10 +6,12 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/top-up", label: "Top Up Game" },
+  { href: "/trending", label: "Trending" },
   { href: "/pulsa", label: "Pulsa" },
   { href: "/token-pln", label: "Token PLN" },
-  { href: "/status", label: "Cek Status" },
   { href: "/promo", label: "Promo" },
+  { href: "/support", label: "Support" },
+  { href: "/status", label: "Status" },
 ];
 
 export default function Navbar() {
