@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  slug     String    @unique
+  icon     String
+  type     String    // game, pulsa, token
+  sort     Int       @default(0)
+  active   Boolean   @default(true)
+  createdAt DateTime @default(now())
+  products Product[]
+}
+
+model Product {
+  id            Int       @id @default(autoincrement())
+  categoryId    Int
+  category      Category  @relation(fields: [categoryId], references: [id])
+  name          String
+  description   String    @default("")
+  price         Int       // in rupiah
+  originalPrice Int       @default(0) // for showing discount
+  image         String    @default("")
+  active        Boolean   @default(true)
+  sort          Int       @default(0)
+  popular       Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  transactions  Transaction[]
+}
+
+model Banner {
+  id        Int      @id @default(autoincrement())
+  title     String
+  subtitle  String   @default("")
+  image     String
+  link      String   @default("")
+  active    Boolean  @default(true)
+  sort      Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Voucher {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique
+  type        String   // percent, fixed
+  value       Int
+  minTransaction Int  @default(0)
+  maxUses     Int      @default(0) // 0 = unlimited
+  usedCount   Int      @default(0)
+  expiresAt   DateTime?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  transactions Transaction[]
+}
+
+model Transaction {
+  id                Int      @id @default(autoincrement())
+  transactionNumber String   @unique
+  productId         Int
+  product           Product  @relation(fields: [productId], references: [id])
+  customerData      String   // JSON: {userId, zoneId, phone, customerId, etc}
+  nominal           String
+  price             Int
+  voucherId         Int?
+  voucher           Voucher? @relation(fields: [voucherId], references: [id])
+  discount          Int      @default(0)
+  total             Int
+  paymentMethod     String   // qris, bank_transfer, va, ewallet
+  paymentChannel    String   // bca, bri, bni, mandiri, dana, ovo, gopay, shopeepay
+  paymentUrl        String   @default("")
+  status            String   @default("pending") // pending, processing, success, failed
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
