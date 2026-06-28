@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="gi-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2A5E"/>
+      <stop offset="50%" stop-color="#1A4A8E"/>
+      <stop offset="100%" stop-color="#0A1A3E"/>
+    </linearGradient>
+    <linearGradient id="gi-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#80C0FF"/>
+    </linearGradient>
+    <filter id="gi-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#gi-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#80C0FF" stroke-opacity="0.2" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="55" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+  <path d="M100 40 Q130 70 155 100 Q130 130 100 160 Q70 130 45 100 Q70 70 100 40 Z" fill="none" stroke="url(#gi-accent)" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="100" y="118" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="62" fill="url(#gi-accent)" filter="url(#gi-shadow)">GI</text>
+</svg>

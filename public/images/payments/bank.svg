@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bank-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="50%" stop-color="#2D2D4E"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <linearGradient id="bank-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </linearGradient>
+    <filter id="bank-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bank-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#FFD700" stroke-opacity="0.15" stroke-width="1.5"/>
+  <rect x="50" y="120" width="100" height="30" rx="4" fill="none" stroke="url(#bank-accent)" stroke-width="3"/>
+  <polygon points="100,45 145,90 55,90" fill="none" stroke="url(#bank-accent)" stroke-width="3"/>
+  <rect x="55" y="120" width="16" height="30" rx="1" fill="url(#bank-accent)" opacity="0.3"/>
+  <rect x="77" y="120" width="16" height="30" rx="1" fill="url(#bank-accent)" opacity="0.3"/>
+  <rect x="107" y="120" width="16" height="30" rx="1" fill="url(#bank-accent)" opacity="0.3"/>
+  <rect x="129" y="120" width="16" height="30" rx="1" fill="url(#bank-accent)" opacity="0.3"/>
+  <text x="100" y="180" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#FFD700" filter="url(#bank-shadow)">BANK</text>
+</svg>

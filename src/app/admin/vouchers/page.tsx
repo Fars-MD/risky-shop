@@ -52,74 +52,74 @@ export default function AdminVouchersPage() {
   };
 
   if (loading) {
-    return <div className="max-w-4xl mx-auto px-4 py-8"><div className="animate-pulse space-y-4">{/* skeleton */}</div></div>;
+    return <div className="max-w-4xl mx-auto px-4 py-8 relative z-10"><div className="animate-pulse space-y-4" /></div>;
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 relative z-10">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Kelola Voucher</h1>
+        <h1 className="text-2xl font-bold text-white">Kelola Voucher</h1>
         <button
           onClick={() => setShowForm(true)}
-          className="px-4 py-2 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600"
+          className="px-4 py-2 border border-cyan-400/40 text-cyan-300 rounded-lg font-medium hover:border-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all duration-300"
         >
           + Tambah Voucher
         </button>
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-gray-200 p-6 mb-6 space-y-4">
-          <h3 className="font-semibold text-lg">Tambah Voucher</h3>
+        <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 mb-6 space-y-4">
+          <h3 className="font-semibold text-lg text-white">Tambah Voucher</h3>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Kode Voucher</label>
+            <label className="block text-sm font-medium text-slate-300 mb-1">Kode Voucher</label>
             <input
               type="text"
               value={form.code}
               onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })}
               required
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-mono"
+              className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200 font-mono"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Tipe</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Tipe</label>
               <select
                 value={form.type}
                 onChange={(e) => setForm({ ...form, type: e.target.value })}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-200"
               >
                 <option value="percent">Persen (%)</option>
                 <option value="fixed">Nominal (Rp)</option>
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Nilai</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Nilai</label>
               <input
                 type="number"
                 value={form.value}
                 onChange={(e) => setForm({ ...form, value: parseInt(e.target.value) || 0 })}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
               />
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Min. Transaksi</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Min. Transaksi</label>
               <input
                 type="number"
                 value={form.minTransaction}
                 onChange={(e) => setForm({ ...form, minTransaction: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Max. Penggunaan</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Max. Penggunaan</label>
               <input
                 type="number"
                 value={form.maxUses}
                 onChange={(e) => setForm({ ...form, maxUses: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
               />
             </div>
             <div className="flex items-end pb-2">
@@ -128,17 +128,17 @@ export default function AdminVouchersPage() {
                   type="checkbox"
                   checked={form.active}
                   onChange={(e) => setForm({ ...form, active: e.target.checked })}
-                  className="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-cyan-500"
                 />
-                <span className="text-sm font-medium text-gray-700">Aktif</span>
+                <span className="text-sm font-medium text-slate-300">Aktif</span>
               </label>
             </div>
           </div>
           <div className="flex gap-3">
-            <button type="submit" className="px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600">
+            <button type="submit" className="px-6 py-2.5 border border-cyan-400/40 text-cyan-300 rounded-lg font-medium hover:border-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all duration-300">
               Simpan
             </button>
-            <button type="button" onClick={() => setShowForm(false)} className="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50">
+            <button type="button" onClick={() => setShowForm(false)} className="px-6 py-2.5 border border-slate-600 text-slate-400 rounded-lg font-medium hover:border-slate-500 transition-colors">
               Batal
             </button>
           </div>
@@ -147,21 +147,21 @@ export default function AdminVouchersPage() {
 
       <div className="space-y-3">
         {vouchers.map((v) => (
-          <div key={v.id} className="bg-white rounded-xl border border-gray-200 p-4">
+          <div key={v.id} className="glass-light rounded-xl p-4">
             <div className="flex justify-between items-center">
               <div>
-                <div className="font-mono font-bold text-indigo-600">{v.code}</div>
-                <div className="text-sm text-gray-500">
+                <div className="font-mono font-bold gradient-text">{v.code}</div>
+                <div className="text-sm text-slate-400">
                   {v.type === "percent" ? `${v.value}%` : `Rp${v.value.toLocaleString("id-ID")}`} | Min: Rp{v.minTransaction.toLocaleString("id-ID")} | {v.usedCount}/{v.maxUses || "∞"}
                 </div>
               </div>
-              <span className={`text-xs px-2 py-1 rounded ${v.active ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
+              <span className={`text-xs px-2 py-1 rounded border ${v.active ? "bg-green-500/20 text-green-400 border-green-500/30" : "bg-slate-700/50 text-slate-400 border-slate-600"}`}>
                 {v.active ? "Aktif" : "Nonaktif"}
               </span>
             </div>
           </div>
         ))}
-        {vouchers.length === 0 && <div className="text-center py-12 text-gray-400">Belum ada voucher</div>}
+        {vouchers.length === 0 && <div className="text-center py-12 text-slate-500">Belum ada voucher</div>}
       </div>
     </div>
   );

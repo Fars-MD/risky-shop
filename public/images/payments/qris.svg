@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="qris-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003322"/>
+      <stop offset="50%" stop-color="#006644"/>
+      <stop offset="100%" stop-color="#002211"/>
+    </linearGradient>
+    <linearGradient id="qris-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#00CC66"/>
+    </linearGradient>
+    <filter id="qris-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#qris-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00FF88" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="55" y="55" width="90" height="90" rx="8" fill="none" stroke="url(#qris-accent)" stroke-width="3"/>
+  <rect x="65" y="65" width="70" height="70" rx="4" fill="none" stroke="#00FF88" stroke-opacity="0.15" stroke-width="2"/>
+  <line x1="80" y1="100" x2="120" y2="100" stroke="url(#qris-accent)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="80" x2="100" y2="120" stroke="url(#qris-accent)" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#00FF88" filter="url(#qris-shadow)">QRIS</text>
+</svg>

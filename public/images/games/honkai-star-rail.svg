@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D001A"/>
+      <stop offset="50%" stop-color="#1A0033"/>
+      <stop offset="100%" stop-color="#00000D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00BFFF"/>
+      <stop offset="100%" stop-color="#9932CC"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00BFFF" stroke-opacity="0.2" stroke-width="1.5"/>
+  <text x="100" y="118" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="28" fill="url(#accent)">STAR</text>
+  <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#00BFFF" opacity="0.7">RAIL</text>
+</svg>

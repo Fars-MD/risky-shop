@@ -84,10 +84,10 @@ export default function AdminBannersPage() {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-8 relative z-10">
         <div className="animate-pulse space-y-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-20 bg-gray-200 rounded-xl" />
+            <div key={i} className="h-20 bg-slate-800 rounded-xl" />
           ))}
         </div>
       </div>
@@ -95,15 +95,15 @@ export default function AdminBannersPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 relative z-10">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Kelola Banner</h1>
+        <h1 className="text-2xl font-bold text-white">Kelola Banner</h1>
         <button
           onClick={() => {
             resetForm();
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition-colors"
+          className="px-4 py-2 border border-cyan-400/40 text-cyan-300 rounded-lg font-medium hover:border-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all duration-300"
         >
           + Tambah Banner
         </button>
@@ -112,55 +112,55 @@ export default function AdminBannersPage() {
       {showForm && (
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl border border-gray-200 p-6 mb-6 space-y-4"
+          className="glass rounded-2xl p-6 mb-6 space-y-4"
         >
-          <h3 className="font-semibold text-lg">{editing ? "Edit Banner" : "Tambah Banner"}</h3>
+          <h3 className="font-semibold text-lg text-white">{editing ? "Edit Banner" : "Tambah Banner"}</h3>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Judul</label>
+            <label className="block text-sm font-medium text-slate-300 mb-1">Judul</label>
             <input
               type="text"
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               required
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subtitle</label>
+            <label className="block text-sm font-medium text-slate-300 mb-1">Subtitle</label>
             <input
               type="text"
               value={form.subtitle}
               onChange={(e) => setForm({ ...form, subtitle: e.target.value })}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">URL Gambar</label>
+            <label className="block text-sm font-medium text-slate-300 mb-1">URL Gambar</label>
             <input
               type="text"
               value={form.image}
               onChange={(e) => setForm({ ...form, image: e.target.value })}
               placeholder="/banners/example.jpg"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200 placeholder-slate-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Link (opsional)</label>
+            <label className="block text-sm font-medium text-slate-300 mb-1">Link (opsional)</label>
             <input
               type="text"
               value={form.link}
               onChange={(e) => setForm({ ...form, link: e.target.value })}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
             />
           </div>
           <div className="flex gap-4">
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Urutan</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Urutan</label>
               <input
                 type="number"
                 value={form.sort}
                 onChange={(e) => setForm({ ...form, sort: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 text-slate-200"
               />
             </div>
             <div className="flex items-end pb-2">
@@ -169,16 +169,16 @@ export default function AdminBannersPage() {
                   type="checkbox"
                   checked={form.active}
                   onChange={(e) => setForm({ ...form, active: e.target.checked })}
-                  className="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-cyan-500"
                 />
-                <span className="text-sm font-medium text-gray-700">Aktif</span>
+                <span className="text-sm font-medium text-slate-300">Aktif</span>
               </label>
             </div>
           </div>
           <div className="flex gap-3">
             <button
               type="submit"
-              className="px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition-colors"
+              className="px-6 py-2.5 border border-cyan-400/40 text-cyan-300 rounded-lg font-medium hover:border-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all duration-300"
             >
               {editing ? "Simpan" : "Tambah"}
             </button>
@@ -188,7 +188,7 @@ export default function AdminBannersPage() {
                 setShowForm(false);
                 resetForm();
               }}
-              className="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+              className="px-6 py-2.5 border border-slate-600 text-slate-400 rounded-lg font-medium hover:border-slate-500 transition-colors"
             >
               Batal
             </button>
@@ -200,25 +200,25 @@ export default function AdminBannersPage() {
         {banners.map((banner) => (
           <div
             key={banner.id}
-            className="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between"
+            className="glass-light rounded-xl p-4 flex items-center justify-between"
           >
             <div className="flex-1">
-              <div className="font-semibold text-gray-900">{banner.title}</div>
-              <div className="text-sm text-gray-500">{banner.subtitle}</div>
-              <div className="text-xs text-gray-400 mt-1">
+              <div className="font-semibold text-white">{banner.title}</div>
+              <div className="text-sm text-slate-400">{banner.subtitle}</div>
+              <div className="text-xs text-slate-500 mt-1">
                 Urutan: {banner.sort} | {banner.active ? "Aktif" : "Nonaktif"}
               </div>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => openEdit(banner)}
-                className="px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                className="px-3 py-1.5 text-sm border border-cyan-400/30 text-cyan-300 rounded-lg hover:border-cyan-400 transition-all"
               >
                 Edit
               </button>
               <button
                 onClick={() => handleDelete(banner.id)}
-                className="px-3 py-1.5 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+                className="px-3 py-1.5 text-sm border border-red-400/30 text-red-400 rounded-lg hover:border-red-400 transition-all"
               >
                 Hapus
               </button>
@@ -226,7 +226,7 @@ export default function AdminBannersPage() {
           </div>
         ))}
         {banners.length === 0 && (
-          <div className="text-center py-12 text-gray-400">Belum ada banner</div>
+          <div className="text-center py-12 text-slate-500">Belum ada banner</div>
         )}
       </div>
     </div>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002000"/>
+      <stop offset="50%" stop-color="#004000"/>
+      <stop offset="100%" stop-color="#001000"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FF44"/>
+      <stop offset="100%" stop-color="#00AA22"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00FF44" stroke-opacity="0.2" stroke-width="1.5"/>
+  <text x="100" y="105" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24" fill="url(#accent)">EA SPORTS</text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="#00FF44" opacity="0.9">FC</text>
+  <text x="100" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#00FF44" opacity="0.6">MOBILE</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mud-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000D1A"/>
+      <stop offset="50%" stop-color="#0088FF"/>
+      <stop offset="100%" stop-color="#000D1A"/>
+    </linearGradient>
+    <linearGradient id="mud-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#AAE0FF"/>
+    </linearGradient>
+    <filter id="mud-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#mud-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#44AAFF" stroke-opacity="0.2" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="url(#mud-accent)" stroke-width="3" filter="url(#mud-shadow)"/>
+  <polyline points="72,100 88,116 128,84" fill="none" stroke="url(#mud-accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

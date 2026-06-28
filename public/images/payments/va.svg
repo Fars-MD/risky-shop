@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="va-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0033"/>
+      <stop offset="50%" stop-color="#440088"/>
+      <stop offset="100%" stop-color="#0D001A"/>
+    </linearGradient>
+    <linearGradient id="va-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BB66FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <filter id="va-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#va-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#BB66FF" stroke-opacity="0.2" stroke-width="1.5"/>
+  <circle cx="100" cy="80" r="30" fill="none" stroke="url(#va-accent)" stroke-width="3"/>
+  <text x="100" y="88" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="24" fill="url(#va-accent)">VA</text>
+  <text x="100" y="145" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24" fill="url(#va-accent)" filter="url(#va-shadow)">VIRTUAL</text>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#BB66FF">ACCOUNT</text>
+</svg>

@@ -23,26 +23,26 @@ export default function AdminPage() {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Panel Admin</h1>
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 relative z-10">
+      <h1 className="text-2xl font-bold text-white mb-6">Panel Admin</h1>
 
       {stats && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="text-2xl font-bold text-gray-900">{stats.total}</div>
-            <div className="text-sm text-gray-500">Total Transaksi</div>
+          <div className="glass-light rounded-xl p-4">
+            <div className="text-2xl font-bold text-white">{stats.total}</div>
+            <div className="text-sm text-slate-400">Total Transaksi</div>
           </div>
-          <div className="bg-white rounded-xl p-4 border border-amber-200">
-            <div className="text-2xl font-bold text-amber-600">{stats.pending}</div>
-            <div className="text-sm text-gray-500">Menunggu</div>
+          <div className="glass-light rounded-xl p-4 border border-amber-500/30">
+            <div className="text-2xl font-bold text-amber-400">{stats.pending}</div>
+            <div className="text-sm text-slate-400">Menunggu</div>
           </div>
-          <div className="bg-white rounded-xl p-4 border border-green-200">
-            <div className="text-2xl font-bold text-green-600">{stats.success}</div>
-            <div className="text-sm text-gray-500">Berhasil</div>
+          <div className="glass-light rounded-xl p-4 border border-green-500/30">
+            <div className="text-2xl font-bold text-green-400">{stats.success}</div>
+            <div className="text-sm text-slate-400">Berhasil</div>
           </div>
-          <div className="bg-white rounded-xl p-4 border border-red-200">
-            <div className="text-2xl font-bold text-red-600">{stats.failed}</div>
-            <div className="text-sm text-gray-500">Gagal</div>
+          <div className="glass-light rounded-xl p-4 border border-red-500/30">
+            <div className="text-2xl font-bold text-red-400">{stats.failed}</div>
+            <div className="text-sm text-slate-400">Gagal</div>
           </div>
         </div>
       )}
@@ -52,21 +52,21 @@ export default function AdminPage() {
           title="Banner"
           desc="Kelola banner promosi"
           href="/admin/banners"
-          icon="🖼️"
+          icon="/images/payments/qris.svg"
         />
         <AdminCard
           title="Voucher"
           desc="Kelola kode voucher"
           href="/admin/vouchers"
-          icon="🏷️"
+          icon="/images/misc/murah.svg"
         />
         <AdminCard
           title="Transaksi"
           desc="Lihat semua transaksi"
           href="/admin/transactions"
-          icon="📋"
+          icon="/images/payments/bank.svg"
         />
-        <AdminCard title="Produk" desc="Kelola produk" href="/admin/products" icon="📦" />
+        <AdminCard title="Produk" desc="Kelola produk" href="/admin/products" icon="/images/misc/cepat.svg" />
       </div>
     </div>
   );
@@ -86,11 +86,11 @@ function AdminCard({
   return (
     <Link
       href={href}
-      className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all"
+      className="glass-light rounded-2xl p-6 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300"
     >
-      <div className="text-3xl mb-3">{icon}</div>
-      <h3 className="font-semibold text-gray-900">{title}</h3>
-      <p className="text-sm text-gray-500">{desc}</p>
+      <img src={icon} alt={title} className="w-14 h-14 mb-3 rounded-xl object-cover" />
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="text-sm text-slate-400">{desc}</p>
     </Link>
   );
 }

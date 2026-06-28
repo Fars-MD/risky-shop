@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="hok-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0A0A"/>
+      <stop offset="50%" stop-color="#3D1A0A"/>
+      <stop offset="100%" stop-color="#1A0505"/>
+    </linearGradient>
+    <linearGradient id="hok-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#FFA500"/>
+      <stop offset="100%" stop-color="#FF8C00"/>
+    </linearGradient>
+    <linearGradient id="hok-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2222"/>
+      <stop offset="100%" stop-color="#CC0000"/>
+    </linearGradient>
+    <filter id="hok-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#hok-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="url(#hok-gold)" stroke-opacity="0.25" stroke-width="1.5"/>
+  <path d="M100 35 L135 65 L165 100 L135 135 L100 165 L65 135 L35 100 L65 65 Z" fill="none" stroke="url(#hok-gold)" stroke-opacity="0.1" stroke-width="2"/>
+  <circle cx="100" cy="100" r="45" fill="none" stroke="url(#hok-gold)" stroke-opacity="0.2" stroke-width="2"/>
+  <text x="100" y="118" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="56" fill="url(#hok-gold)" filter="url(#hok-shadow)">HOK</text>
+</svg>

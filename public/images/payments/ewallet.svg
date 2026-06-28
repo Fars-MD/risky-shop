@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="ew-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2A1A"/>
+      <stop offset="50%" stop-color="#1A5C3A"/>
+      <stop offset="100%" stop-color="#051A0D"/>
+    </linearGradient>
+    <linearGradient id="ew-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFAA"/>
+      <stop offset="100%" stop-color="#00DD88"/>
+    </linearGradient>
+    <filter id="ew-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#ew-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00FFAA" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="45" y="65" width="110" height="70" rx="10" fill="none" stroke="url(#ew-accent)" stroke-width="3"/>
+  <rect x="55" y="75" width="30" height="20" rx="4" fill="url(#ew-accent)" opacity="0.3"/>
+  <circle cx="130" cy="100" r="10" fill="url(#ew-accent)" opacity="0.4"/>
+  <text x="100" y="165" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#00FFAA" filter="url(#ew-shadow)">E-WALLET</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0000"/>
+      <stop offset="50%" stop-color="#4D0000"/>
+      <stop offset="100%" stop-color="#0A0000"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4400"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#FF4400" stroke-opacity="0.25" stroke-width="1.5"/>
+  <text x="100" y="105" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="url(#accent)">FREE FIRE</text>
+  <text x="100" y="132" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24" fill="#FF4400">MAX</text>
+</svg>

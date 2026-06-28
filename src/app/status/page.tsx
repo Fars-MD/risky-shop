@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { formatCurrency } from "@/lib/utils";
 
-const statusMap: Record<string, { label: string; color: string; icon: string }> = {
-  pending: { label: "Menunggu Pembayaran", color: "text-amber-600 bg-amber-50 border-amber-200", icon: "⏳" },
-  processing: { label: "Sedang Diproses", color: "text-blue-600 bg-blue-50 border-blue-200", icon: "🔄" },
-  success: { label: "Berhasil", color: "text-green-600 bg-green-50 border-green-200", icon: "✅" },
-  failed: { label: "Gagal", color: "text-red-600 bg-red-50 border-red-200", icon: "❌" },
+const statusMap: Record<string, { label: string; color: string; image: string }> = {
+  pending: { label: "Menunggu Pembayaran", color: "text-amber-400 border-amber-500/30 bg-amber-500/10", image: "/images/payments/qris.svg" },
+  processing: { label: "Sedang Diproses", color: "text-blue-400 border-blue-500/30 bg-blue-500/10", image: "/images/misc/cepat.svg" },
+  success: { label: "Berhasil", color: "text-green-400 border-green-500/30 bg-green-500/10", image: "/images/misc/aman.svg" },
+  failed: { label: "Gagal", color: "text-red-400 border-red-500/30 bg-red-500/10", image: "/images/misc/murah.svg" },
 };
 
 export default function StatusPage() {
@@ -39,11 +39,11 @@ export default function StatusPage() {
   const st = data ? statusMap[data.status] || statusMap.pending : null;
 
   return (
-    <div className="max-w-lg mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-2">Cek Status Pesanan</h1>
-      <p className="text-gray-500 mb-6">Masukkan nomor transaksi untuk cek status</p>
+    <div className="max-w-lg mx-auto px-4 sm:px-6 py-8 relative z-10">
+      <h1 className="text-2xl font-bold text-white mb-2">Cek Status Pesanan</h1>
+      <p className="text-slate-400 mb-6">Masukkan nomor transaksi untuk cek status</p>
 
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
+      <div className="glass rounded-2xl p-6">
         <div className="flex gap-2 mb-4">
           <input
             type="text"
@@ -51,49 +51,49 @@ export default function StatusPage() {
             onChange={(e) => setTrx(e.target.value.toUpperCase())}
             onKeyDown={(e) => e.key === "Enter" && checkStatus()}
             placeholder="RS-XXXXXXXXXX"
-            className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent font-mono"
+            className="flex-1 px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent font-mono text-slate-200 placeholder-slate-500"
           />
           <button
             onClick={checkStatus}
             disabled={loading || !trx.trim()}
-            className="px-5 py-2.5 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 disabled:bg-gray-300 transition-colors"
+            className="px-5 py-2.5 border border-cyan-400/40 text-cyan-300 rounded-lg font-medium hover:border-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300"
           >
             {loading ? "..." : "Cari"}
           </button>
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+          <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
             {error}
           </div>
         )}
 
         {data && st && (
           <div className="mt-4 space-y-4">
-            <div className={`flex items-center gap-3 p-4 rounded-xl border-2 ${st.color}`}>
-              <span className="text-2xl">{st.icon}</span>
+            <div className={`flex items-center gap-3 p-4 rounded-xl border ${st.color}`}>
+              <img src={st.image} alt={st.label} className="w-12 h-12" />
               <div>
-                <div className="font-bold">{st.label}</div>
-                <div className="text-sm opacity-80">{data.transactionNumber}</div>
+                <div className="font-bold text-white">{st.label}</div>
+                <div className="text-sm text-slate-400">{data.transactionNumber}</div>
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-4 space-y-2 text-sm">
+            <div className="bg-slate-800/50 rounded-xl p-4 space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-500">Produk</span>
-                <span className="font-medium">{data.productName}</span>
+                <span className="text-slate-400">Produk</span>
+                <span className="font-medium text-slate-200">{data.productName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Nominal</span>
-                <span className="font-medium">{data.nominal}</span>
+                <span className="text-slate-400">Nominal</span>
+                <span className="font-medium text-slate-200">{data.nominal}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Metode Bayar</span>
-                <span className="font-medium capitalize">{data.paymentChannel}</span>
+                <span className="text-slate-400">Metode Bayar</span>
+                <span className="font-medium capitalize text-slate-200">{data.paymentChannel}</span>
               </div>
-              <div className="flex justify-between font-bold text-base border-t pt-2">
-                <span>Total</span>
-                <span className="text-indigo-600">{formatCurrency(data.total)}</span>
+              <div className="flex justify-between font-bold text-base border-t border-slate-700 pt-2">
+                <span className="text-slate-200">Total</span>
+                <span className="text-cyan-400">{formatCurrency(data.total)}</span>
               </div>
             </div>
           </div>

@@ -1,16 +1,16 @@
 export default function BantuanPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-2">Bantuan</h1>
-      <p className="text-gray-500 mb-8">Pertanyaan yang sering diajukan</p>
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+      <h1 className="text-2xl font-bold text-white mb-2">Bantuan</h1>
+      <p className="text-slate-400 mb-8">Pertanyaan yang sering diajukan</p>
 
       <div className="space-y-4">
         {faq.map((item, i) => (
-          <details key={i} className="bg-white rounded-xl border border-gray-200">
-            <summary className="px-6 py-4 font-medium text-gray-900 cursor-pointer hover:text-indigo-600 transition-colors">
+          <details key={i} className="glass-light rounded-xl">
+            <summary className="px-6 py-4 font-medium text-slate-200 cursor-pointer hover:text-cyan-400 transition-colors">
               {item.q}
             </summary>
-            <div className="px-6 pb-4 text-sm text-gray-600">{item.a}</div>
+            <div className="px-6 pb-4 text-sm text-slate-400">{item.a}</div>
           </details>
         ))}
       </div>

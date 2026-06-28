@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="xl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002855"/>
+      <stop offset="50%" stop-color="#0047AB"/>
+      <stop offset="100%" stop-color="#001A3A"/>
+    </linearGradient>
+    <linearGradient id="xl-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00BFFF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <filter id="xl-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#xl-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00BFFF" stroke-opacity="0.2" stroke-width="1.5"/>
+  <circle cx="100" cy="85" r="35" fill="none" stroke="#00BFFF" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="100" y="125" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="60" fill="url(#xl-accent)" filter="url(#xl-shadow)">XL</text>
+</svg>

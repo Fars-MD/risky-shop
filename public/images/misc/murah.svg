@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mur-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0000"/>
+      <stop offset="50%" stop-color="#DD2200"/>
+      <stop offset="100%" stop-color="#1A0000"/>
+    </linearGradient>
+    <linearGradient id="mur-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+    <filter id="mur-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#mur-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#FF4400" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="url(#mur-accent)" stroke-width="3" filter="url(#mur-shadow)"/>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="40" fill="url(#mur-accent)">%</text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="14" fill="#FFDD44">MURAH</text>
+</svg>

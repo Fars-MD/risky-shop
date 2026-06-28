@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="aman-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001A0D"/>
+      <stop offset="50%" stop-color="#00AA55"/>
+      <stop offset="100%" stop-color="#001A0D"/>
+    </linearGradient>
+    <linearGradient id="aman-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#AAFFCC"/>
+    </linearGradient>
+    <filter id="aman-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#aman-bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#00FF77" stroke-opacity="0.2" stroke-width="1.5"/>
+  <path d="M100 40 L145 60 L145 110 Q145 145 100 170 Q55 145 55 110 L55 60 Z" fill="none" stroke="url(#aman-accent)" stroke-width="3" filter="url(#aman-shadow)"/>
+  <polyline points="78,105 92,118 122,88" fill="none" stroke="url(#aman-accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

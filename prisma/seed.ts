@@ -1,7 +1,12 @@
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import path from "path";
 
-const prisma = new PrismaClient();
+const connectionString = process.env.DATABASE_URL || "file:./prisma/dev.db";
+const dbPath = path.resolve(connectionString.replace("file:", ""));
+const adapter = new PrismaBetterSqlite3({ url: "file:" + dbPath });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   const existingCategories = await prisma.category.count();
@@ -20,13 +25,28 @@ async function main() {
     data: { name: "Token PLN", slug: "token", icon: "⚡", type: "token", sort: 3 },
   });
 
+  // Re-create game data (delete old, insert fresh)
+  await prisma.transaction.deleteMany();
+  await prisma.product.deleteMany({ where: { categoryId: topUpCat.id } });
+  await prisma.category.deleteMany({ where: { type: "game", slug: { not: "top-up" } } });
+
   const gameData = [
-    { name: "Mobile Legends", slug: "mobile-legends", icon: "🎮", popular: true },
-    { name: "Free Fire", slug: "free-fire", icon: "🔥", popular: true },
-    { name: "PUBG Mobile", slug: "pubg-mobile", icon: "🔫", popular: true },
-    { name: "Honor of Kings", slug: "honor-of-kings", icon: "👑", popular: false },
-    { name: "Valorant", slug: "valorant", icon: "⚔️", popular: true },
-    { name: "Genshin Impact", slug: "genshin-impact", icon: "⭐", popular: true },
+    { name: "Mobile Legends", slug: "mobile-legends", popular: true },
+    { name: "Free Fire", slug: "free-fire", popular: true },
+    { name: "PUBG Mobile", slug: "pubg-mobile", popular: true },
+    { name: "Honor of Kings", slug: "honor-of-kings", popular: false },
+    { name: "Valorant", slug: "valorant", popular: true },
+    { name: "Genshin Impact", slug: "genshin-impact", popular: true },
+    { name: "Call of Duty Mobile", slug: "call-of-duty-mobile", popular: true },
+    { name: "Blood Strike", slug: "blood-strike", popular: false },
+    { name: "Honkai: Star Rail", slug: "honkai-star-rail", popular: true },
+    { name: "Arena of Valor", slug: "arena-of-valor", popular: false },
+    { name: "Wild Rift", slug: "wild-rift", popular: true },
+    { name: "Zenless Zone Zero", slug: "zenless-zone-zero", popular: false },
+    { name: "EA Sports FC Mobile", slug: "ea-sports-fc-mobile", popular: false },
+    { name: "Magic Chess", slug: "magic-chess", popular: true },
+    { name: "Free Fire MAX", slug: "free-fire-max", popular: true },
+    { name: "League of Legends", slug: "league-of-legends", popular: true },
   ];
 
   for (let i = 0; i < gameData.length; i++) {
@@ -42,7 +62,7 @@ async function main() {
       },
     });
     await prisma.category.create({
-      data: { name: g.name, slug: g.slug, icon: g.icon, type: "game", sort: i + 10 },
+      data: { name: g.name, slug: g.slug, icon: "🎮", type: "game", sort: i + 10 },
     });
   }
 

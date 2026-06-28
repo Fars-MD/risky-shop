@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="50%" stop-color="#2D2D2D"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#FF6B00" stroke-opacity="0.25" stroke-width="1.5"/>
+  <text x="100" y="118" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="32" fill="url(#accent)">COD</text>
+  <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#FF6B00" opacity="0.7">MOBILE</text>
+</svg>

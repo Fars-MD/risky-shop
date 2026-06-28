@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00102A"/>
+      <stop offset="50%" stop-color="#002255"/>
+      <stop offset="100%" stop-color="#000815"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#0033AA"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="url(#bg)"/>
+  <rect x="3" y="3" width="194" height="194" rx="18" fill="none" stroke="#0066FF" stroke-opacity="0.25" stroke-width="1.5"/>
+  <text x="100" y="110" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="url(#accent)">WILD</text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#3399FF" opacity="0.7">RIFT</text>
+</svg>
