@@ -1,13 +1,8 @@
 {
-  "buildCommand": "npx prisma generate && next build",
+  "buildCommand": "npx prisma generate && npx prisma migrate deploy && next build",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "nodeVersion": "20.x",
   "regions": ["sin1"],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "NODE_ENV": "production"
-  },
   "headers": [
     {
       "source": "/api/:path*",
@@ -48,10 +43,5 @@
       "source": "/api/:path*",
       "destination": "/api/:path*"
     }
-  ],
-  "functions": {
-    "api/**: {
-      "maxDuration": 60
-    }
-  }
+  ]
 }

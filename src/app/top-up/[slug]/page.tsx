@@ -1,6 +1,7 @@
 import { gameProducts, nominalMap, paymentMethods } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import CheckoutForm from "@/components/CheckoutForm";
+import DiamondPackages from "@/components/DiamondPackages";
 import { Star, Zap, Shield, Clock } from "lucide-react";
 
 export default async function GameDetailPage({
@@ -93,7 +94,17 @@ export default async function GameDetailPage({
       </div>
 
       {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Diamond/Pass Packages Display */}
+        <div className="mb-12">
+          <DiamondPackages
+            nominals={nominals}
+            selectedNominal={null}
+            onSelect={() => {}}
+            productName={game.name}
+          />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Checkout Form - Left Side */}
           <div className="lg:col-span-2">
@@ -112,13 +123,13 @@ export default async function GameDetailPage({
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 border border-slate-700">
               <h3 className="text-white font-bold mb-4">📦 Paket Populer</h3>
               <div className="space-y-2">
-                {nominals.slice(0, 5).map((nominal) => (
+                {nominals.slice(0, 5).map((nominal, idx) => (
                   <div
-                    key={nominal.id}
+                    key={idx}
                     className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-colors"
                   >
                     <span className="text-slate-300 text-sm">
-                      {nominal.amount} {nominal.currency}
+                      {nominal.label}
                     </span>
                     <span className="text-cyan-400 font-bold">
                       Rp {nominal.price.toLocaleString("id-ID")}
